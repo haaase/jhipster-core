@@ -16,7 +16,6 @@ describe('ChevrotainParser', () => {
           }`;
         const result = parse(input);
         const cst = result.cst;
-
         it('does not produce any error', () => {
           expect(result.parseErrors).to.be.empty;
         });
@@ -36,6 +35,17 @@ describe('ChevrotainParser', () => {
             { name: 'language', type: 'Language' }
           ]);
         });
+
+        it('parses a valid JDL text where keywords are used as an identifier', () => {
+          const input = `
+            entity entity {
+              startDate application,
+              enum filter
+            }`;
+
+          const result = parse(input);
+          expect(result.parseErrors).to.be.empty;
+        });
       });
       describe('with a custom start rule', () => {
         const input = `{
@@ -45,7 +55,6 @@ describe('ChevrotainParser', () => {
         }`;
         const result = parse(input, 'entityBody');
         const cst = result.cst;
-
         it('does not produce any error', () => {
           expect(result.parseErrors).to.be.empty;
         });
@@ -135,10 +144,6 @@ describe('ChevrotainParser', () => {
           // this "=" token was inserted during error recovery, thus it will have no position information
           // and will be marked using the "isInsertedInRecovery" flag.
           expect(cst.children.constantDeclaration[2].children.EQUALS[0].isInsertedInRecovery).to.be.true;
-        });
-        it('partially recovers from them', () => {
-          it('reports them', () => {});
-          it('still outputs a valid CST', () => {});
         });
       });
     });
