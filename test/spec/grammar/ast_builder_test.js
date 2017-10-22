@@ -103,6 +103,7 @@ describe('ASTBuilder', () => {
         packageName com.jhipster.myapp
         authenticationType jwt
         hibernateCache ehcache
+        databaseType cassandra
       }
     }
     `;
@@ -115,7 +116,8 @@ describe('ASTBuilder', () => {
             baseName: 'toto',
             packageName: 'com.jhipster.myapp',
             authenticationType: 'jwt',
-            hibernateCache: 'ehcache'
+            hibernateCache: 'ehcache',
+            databaseType: 'cassandra'
           }
         }],
         entities: [],

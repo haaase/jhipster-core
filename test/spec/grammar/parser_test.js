@@ -73,6 +73,7 @@ describe('ChevrotainParser', () => {
             packageName com.jhipster.myapp
             authenticationType jwt
             hibernateCache ehcache
+            databaseType cassandra
           }
         }
         `;
@@ -86,6 +87,7 @@ describe('ChevrotainParser', () => {
           expect(applicationConfig.applicationPackageName[0].children.NAME[0].image).to.equal('com.jhipster.myapp');
           expect(applicationConfig.applicationAuthenticationType[0].children.NAME[0].image).to.equal('jwt');
           expect(applicationConfig.applicationHibernateCache[0].children.NAME[0].image).to.equal('ehcache');
+          expect(applicationConfig.applicationDatabaseType[0].children.NAME[0].image).to.equal('cassandra');
         });
         it('does not generate any error', () => {
           expect(result.parseErrors).to.be.empty;
