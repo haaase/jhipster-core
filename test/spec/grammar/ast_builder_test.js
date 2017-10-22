@@ -107,6 +107,7 @@ describe('ASTBuilder', () => {
         devDatabaseType mysql
         prodDatabaseType mysql
         webSocket spring-websocket
+        clusteredHttpSession hazelcast
       }
     }
     `;
@@ -123,7 +124,8 @@ describe('ASTBuilder', () => {
             databaseType: 'cassandra',
             devDatabaseType: 'mysql',
             prodDatabaseType: 'mysql',
-            webSocket: 'spring-websocket'
+            webSocket: 'spring-websocket',
+            clusteredHttpSession: 'hazelcast'
           }
         }],
         entities: [],

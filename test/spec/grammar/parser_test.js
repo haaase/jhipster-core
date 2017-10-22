@@ -77,6 +77,7 @@ describe('ChevrotainParser', () => {
             devDatabaseType mysql
             prodDatabaseType mysql
             webSocket spring-websocket
+            clusteredHttpSession false
           }
         }
         `;
@@ -94,6 +95,7 @@ describe('ChevrotainParser', () => {
           expect(applicationConfig.applicationDevDatabaseType[0].children.NAME[0].image).to.equal('mysql');
           expect(applicationConfig.applicationProdDatabaseType[0].children.NAME[0].image).to.equal('mysql');
           expect(applicationConfig.applicationWebSocket[0].children.NAME[0].image).to.equal('spring-websocket');
+          expect(applicationConfig.applicationClusteredHttpSession[0].children.NAME[0].image).to.equal('false');
         });
         it('does not generate any error', () => {
           expect(result.parseErrors).to.be.empty;
