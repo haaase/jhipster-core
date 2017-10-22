@@ -106,6 +106,7 @@ describe('ASTBuilder', () => {
         databaseType cassandra
         devDatabaseType mysql
         prodDatabaseType mysql
+        webSocket spring-websocket
       }
     }
     `;
@@ -121,7 +122,8 @@ describe('ASTBuilder', () => {
             hibernateCache: 'ehcache',
             databaseType: 'cassandra',
             devDatabaseType: 'mysql',
-            prodDatabaseType: 'mysql'
+            prodDatabaseType: 'mysql',
+            webSocket: 'spring-websocket'
           }
         }],
         entities: [],

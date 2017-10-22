@@ -76,6 +76,7 @@ describe('ChevrotainParser', () => {
             databaseType cassandra
             devDatabaseType mysql
             prodDatabaseType mysql
+            webSocket spring-websocket
           }
         }
         `;
@@ -92,6 +93,7 @@ describe('ChevrotainParser', () => {
           expect(applicationConfig.applicationDatabaseType[0].children.NAME[0].image).to.equal('cassandra');
           expect(applicationConfig.applicationDevDatabaseType[0].children.NAME[0].image).to.equal('mysql');
           expect(applicationConfig.applicationProdDatabaseType[0].children.NAME[0].image).to.equal('mysql');
+          expect(applicationConfig.applicationWebSocket[0].children.NAME[0].image).to.equal('spring-websocket');
         });
         it('does not generate any error', () => {
           expect(result.parseErrors).to.be.empty;
