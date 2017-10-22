@@ -104,6 +104,8 @@ describe('ASTBuilder', () => {
         authenticationType jwt
         hibernateCache ehcache
         databaseType cassandra
+        devDatabaseType mysql
+        prodDatabaseType mysql
       }
     }
     `;
@@ -117,7 +119,9 @@ describe('ASTBuilder', () => {
             packageName: 'com.jhipster.myapp',
             authenticationType: 'jwt',
             hibernateCache: 'ehcache',
-            databaseType: 'cassandra'
+            databaseType: 'cassandra',
+            devDatabaseType: 'mysql',
+            prodDatabaseType: 'mysql'
           }
         }],
         entities: [],

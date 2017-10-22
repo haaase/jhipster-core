@@ -74,6 +74,8 @@ describe('ChevrotainParser', () => {
             authenticationType jwt
             hibernateCache ehcache
             databaseType cassandra
+            devDatabaseType mysql
+            prodDatabaseType mysql
           }
         }
         `;
@@ -88,6 +90,8 @@ describe('ChevrotainParser', () => {
           expect(applicationConfig.applicationAuthenticationType[0].children.NAME[0].image).to.equal('jwt');
           expect(applicationConfig.applicationHibernateCache[0].children.NAME[0].image).to.equal('ehcache');
           expect(applicationConfig.applicationDatabaseType[0].children.NAME[0].image).to.equal('cassandra');
+          expect(applicationConfig.applicationDevDatabaseType[0].children.NAME[0].image).to.equal('mysql');
+          expect(applicationConfig.applicationProdDatabaseType[0].children.NAME[0].image).to.equal('mysql');
         });
         it('does not generate any error', () => {
           expect(result.parseErrors).to.be.empty;
