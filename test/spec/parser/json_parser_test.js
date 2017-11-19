@@ -1,3 +1,22 @@
+/**
+ * Copyright 2013-2017 the original author or authors from the JHipster project.
+ *
+ * This file is part of the JHipster project, see http://www.jhipster.tech/
+ * for more information.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 /* eslint-disable no-new, no-unused-expressions */
 const expect = require('chai').expect;
 
@@ -52,57 +71,50 @@ describe('::parse', () => {
     it('parses options', () => {
       expect(
         content.getOptions().filter(
-          option =>
-            option.name === BinaryOptions.DTO &&
-            option.value === BinaryOptionValues.dto.MAPSTRUCT &&
-            option.entityNames.has('Employee')
+          option => option.name === BinaryOptions.DTO
+            && option.value === BinaryOptionValues.dto.MAPSTRUCT
+            && option.entityNames.has('Employee')
+        ).length
+      ).to.eq(1);
+      expect(
+        content.getOptions().filter(
+          option => option.name === BinaryOptions.PAGINATION
+            && option.value === BinaryOptionValues.pagination['INFINITE-SCROLL']
+            && option.entityNames.has('Employee')
+        ).length
+      ).to.eq(1);
+      expect(
+        content.getOptions().filter(
+          option => option.name === BinaryOptions.SERVICE
+            && option.value === BinaryOptionValues.service.SERVICE_CLASS
+            && option.entityNames.has('Employee')
+        ).length
+      ).to.eq(1);
+      expect(
+        content.getOptions().filter(
+          option => option.name === BinaryOptions.SEARCH_ENGINE
+            && option.value === BinaryOptionValues.searchEngine.ELASTIC_SEARCH
+            && option.entityNames.has('Employee')
+        ).length
+      ).to.eq(1);
+      expect(
+        content.getOptions().filter(
+          option => option.name === BinaryOptions.MICROSERVICE
+            && option.value === 'mymicroservice'
+            && option.entityNames.has('Employee')
+        ).length
+      ).to.eq(1);
+      expect(
+        content.getOptions().filter(
+          option => option.name === BinaryOptions.ANGULAR_SUFFIX
+            && option.value === 'myentities'
+            && option.entityNames.has('Employee')
         ).length
       ).to.eq(1);
       expect(
         content.getOptions().filter(
           option =>
-            option.name === BinaryOptions.PAGINATION &&
-            option.value === BinaryOptionValues.pagination['INFINITE-SCROLL'] &&
-            option.entityNames.has('Employee')
-        ).length
-      ).to.eq(1);
-      expect(
-        content.getOptions().filter(
-          option =>
-            option.name === BinaryOptions.SERVICE &&
-            option.value === BinaryOptionValues.service.SERVICE_CLASS &&
-            option.entityNames.has('Employee')
-        ).length
-      ).to.eq(1);
-      expect(
-        content.getOptions().filter(
-          option =>
-            option.name === BinaryOptions.SEARCH_ENGINE &&
-            option.value === BinaryOptionValues.searchEngine.ELASTIC_SEARCH &&
-            option.entityNames.has('Employee')
-        ).length
-      ).to.eq(1);
-      expect(
-        content.getOptions().filter(
-          option =>
-            option.name === BinaryOptions.MICROSERVICE &&
-            option.value === 'mymicroservice' &&
-            option.entityNames.has('Employee')
-        ).length
-      ).to.eq(1);
-      expect(
-        content.getOptions().filter(
-          option =>
-            option.name === BinaryOptions.ANGULAR_SUFFIX &&
-            option.value === 'myentities' &&
-            option.entityNames.has('Employee')
-        ).length
-      ).to.eq(1);
-      expect(
-        content.getOptions().filter(
-          option =>
-            option.name === UnaryOptions.NO_FLUENT_METHOD &&
-            option.entityNames.has('Employee')
+            option.name === UnaryOptions.NO_FLUENT_METHOD && option.entityNames.has('Employee')
         ).length
       ).to.eq(1);
     });
