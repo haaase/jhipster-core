@@ -674,7 +674,7 @@ describe('JDLParser', () => {
           expect(application.path).to.eq('../../toto');
           expect(application.packageName).to.eq('com.mathieu.sample');
           expect(application.packageFolder).to.eq('com/mathieu/sample');
-          expect(application.authenticationType).to.eq('session');
+          expect(application.authenticationType).to.eq('jwt');
           expect(application.hibernateCache).to.eq('no');
           expect(application.clusteredHttpSession).to.eq('no');
           expect(application.websocket).to.be.false;

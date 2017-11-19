@@ -13,7 +13,7 @@ describe('JDLApplication', () => {
         expect(jdlApplicationConfig.path).to.eq('jhipster');
         expect(jdlApplicationConfig.packageName).to.eq('com.mycompany.myapp');
         expect(jdlApplicationConfig.packageFolder).to.eq('com/mycompany/myapp');
-        expect(jdlApplicationConfig.authenticationType).to.eq('session');
+        expect(jdlApplicationConfig.authenticationType).to.eq('jwt');
         expect(jdlApplicationConfig.hibernateCache).to.eq('no');
         expect(jdlApplicationConfig.clusteredHttpSession).to.eq('no');
         expect(jdlApplicationConfig.websocket).to.eq(false);
@@ -46,13 +46,15 @@ describe('JDLApplication', () => {
   describe('#toString', () => {
     it('stringifies the application object', () => {
       const jdlApplication = new JDLApplication({ config: { jhipsterVersion: '4.9.0' } });
+      expect(jdlApplication.config.jwtSecretKey).not.to.be.undefined;
+      delete jdlApplication.config.jwtSecretKey;
       expect(jdlApplication.toString()).to.eq(`application {
   config {
     baseName jhipster
     path jhipster
     packageName com.mycompany.myapp
     packageFolder com/mycompany/myapp
-    authenticationType session
+    authenticationType jwt
     hibernateCache no
     clusteredHttpSession no
     websocket false
