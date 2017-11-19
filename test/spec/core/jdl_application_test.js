@@ -68,6 +68,7 @@ describe('JDLApplication', () => {
     languages en
     serverPort 8080
     enableSocialSignIn false
+    enableSwaggerCodegen false
     useSass false
     jhiPrefix jhi
     messageBroker false
