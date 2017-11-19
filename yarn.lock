@@ -287,9 +287,9 @@ check-error@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/check-error/-/check-error-1.0.2.tgz#574d312edd88bb5dd8912e9286dd6c0aed4aac82"
 
-chevrotain@0.33.0:
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/chevrotain/-/chevrotain-0.33.0.tgz#76881b4f511bdfb79db3e18d7a84145633b59d5e"
+chevrotain@0.35.0:
+  version "0.35.0"
+  resolved "https://registry.yarnpkg.com/chevrotain/-/chevrotain-0.35.0.tgz#d98a61745c533687a2dd37ab46eb9e8a8f56336a"
 
 circular-json@^0.3.1:
   version "0.3.1"
